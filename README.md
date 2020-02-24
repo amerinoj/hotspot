@@ -1,5 +1,3 @@
-pot   
-
 A simple wifi hotspot for the Raspberry Pi 3.                        
 
 The install script use dnsmasq and hostap to configure the hotspot
@@ -14,6 +12,7 @@ bash <(curl -s https://raw.githubusercontent.com/amerinoj/hotspot/master/install
 chmod +x install.sh
 ./install.sh
 
+```
                                                                                    
 ## Config
 
