@@ -124,20 +124,16 @@ mv -n /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
 
 echo -e "bind-dynamic" >> /etc/dnsmasq.conf
 
-listcard=$(ifconfig  | grep flags  | cut -d":" -f1 | grep -v lo )
+listcard=$(ifconfig  | grep flags  | cut -d":" -f1 | grep -v "lo\|$wcard" )
 oldIFS=$IFS
 IFS=$'\n'
 choices=($listcard)
 IFS=$oldIFS
 
 for item in "${choices[@]}"; do
-    if [[ $item == $wcard ]]; then
-          echo -e "interface=$wcard" >> /etc/dnsmasq.conf 
-    else
-          echo -e "no-dhcp-interface=$item" >> /etc/dnsmasq.conf 
-    fi
+      echo -e "no-dhcp-interface=$item" >> /etc/dnsmasq.conf 
 done
-
+echo -e "interface=$wcard" >> /etc/dnsmasq.conf
 #config dhcp range
 echo -e "dhcp-range=interface:$wcard,$dhcp_start,$dhcp_end,$ip_mask,24h  " >> /etc/dnsmasq.conf
 
