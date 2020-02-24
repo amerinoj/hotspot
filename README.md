@@ -9,8 +9,6 @@ Quick Installation for Raspbian:
 ```bash
 sudo -i
 bash <(curl -s https://raw.githubusercontent.com/amerinoj/hotspot/master/install.sh)     
-chmod +x install.sh
-./install.sh
 
 ```
                                                                                    
