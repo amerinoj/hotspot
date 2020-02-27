@@ -80,7 +80,10 @@ if !  grep -q interface "/etc/hostapd/hostapd.conf" ; then
     echo -e "wpa_passphrase=AardvarkBadgerHedgehog" >> /etc/hostapd/hostapd.conf
     echo -e "wpa_key_mgmt=WPA-PSK" >> /etc/hostapd/hostapd.conf
     echo -e "wpa_pairwise=TKIP" >> /etc/hostapd/hostapd.conf
-    echo -e "rsn_pairwise=CCMP" >> /etc/hostapd/hostapd.conf
+    echo -e "rsn_pairwise=CCMP TKIP" >> /etc/hostapd/hostapd.conf
+    echo -e "max_num_sta=8" >> /etc/hostapd/hostapd.conf
+    echo -e "wpa_group_rekey=86400" >> /etc/hostapd/hostapd.conf   
+
 fi
 
 #config card
