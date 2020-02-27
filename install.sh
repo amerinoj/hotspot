@@ -18,7 +18,7 @@ fi
 #install
 echo "Installing dependencies..."
 apt-get update
-apt-get install dnsmasq hostapd	
+apt-get --yes install dnsmasq hostapd	
 echo "done."
 
 echo "stoping services..."
