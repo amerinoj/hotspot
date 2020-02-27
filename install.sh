@@ -121,9 +121,6 @@ sed -i '/#DAEMON_CONF/c\'DAEMON_CONF="\"/etc/hostapd/hostapd.conf"\"'' /etc/defa
 ##########config dnsmasq
 #original  config
 mv -n /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
-
-echo -e "dhcp-mac=set:client_is_a_pi,B8:27:EB:*:*:*" >> /etc/dnsmasq.conf
-echo -e "dhcp-reply-delay=tag:client_is_a_pi,2" >> /etc/dnsmasq.conf
 echo -e "bind-dynamic" >> /etc/dnsmasq.conf
 
 listcard=$(ifconfig  | grep flags  | cut -d":" -f1 | grep -v "lo\|$wcard" )
