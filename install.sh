@@ -82,7 +82,7 @@ if !  grep -q interface "/etc/hostapd/hostapd.conf" ; then
     echo -e "wpa_pairwise=TKIP" >> /etc/hostapd/hostapd.conf
     echo -e "rsn_pairwise=CCMP TKIP" >> /etc/hostapd/hostapd.conf
     echo -e "max_num_sta=8" >> /etc/hostapd/hostapd.conf
-    echo -e "wpa_group_rekey=86400" >> /etc/hostapd/hostapd.conf   
+    echo -e "wpa_group_rekey=600" >> /etc/hostapd/hostapd.conf   
 
 fi
 
