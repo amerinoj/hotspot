@@ -68,11 +68,13 @@ service dhcpcd restart
 if !  grep -q interface "/etc/hostapd/hostapd.conf" ; then
 
     echo -e "interface=wlan0" >> /etc/hostapd/hostapd.conf
+    echo -e "ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]" >> /etc/hostapd/hostapd.conf
+    echo -e "ieee80211n=1" >> /etc/hostapd/hostapd.conf
     echo -e "driver=nl80211" >> /etc/hostapd/hostapd.conf
     echo -e "ssid=NameOfNetwork" >> /etc/hostapd/hostapd.conf
     echo -e "hw_mode=g" >> /etc/hostapd/hostapd.conf
-    echo -e "channel=7" >> /etc/hostapd/hostapd.conf
-    echo -e "wmm_enabled=0" >> /etc/hostapd/hostapd.conf
+    echo -e "channel=6" >> /etc/hostapd/hostapd.conf
+    echo -e "wmm_enabled=1" >> /etc/hostapd/hostapd.conf
     echo -e "macaddr_acl=0" >> /etc/hostapd/hostapd.conf
     echo -e "auth_algs=1" >> /etc/hostapd/hostapd.conf
     echo -e "ignore_broadcast_ssid=0" >> /etc/hostapd/hostapd.conf
